@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+# ---------------------------------------------------------------------
+# table definition for FASIS customer categories
+#
+# Name: fasis_categories.py
+# Author: Andreas Kaiser
+# Email: kaiser.vocote@gmail.com
+# Version: 0.0.1
+# Date: 2016-10-15
+#
+# ---------------------------------------------------------------------
+
+db.define_table(
+    'cust_categories',
+    Field('name', 'string'),
+    format = '%(name)s')
+
+db.cust_categories.name.requires = IS_NOT_EMPTY()

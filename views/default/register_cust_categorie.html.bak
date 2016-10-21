@@ -1,0 +1,4 @@
+{{extend 'layout.html'}}
+<h3>Dies ist das Template default/register_cust_categorie.html</h3>
+<h1>{{=T('Categories registration form')}}</h1>
+{{=grid}}

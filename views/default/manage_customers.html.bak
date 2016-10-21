@@ -1,0 +1,4 @@
+{{extend 'layout.html'}}
+<h1>Dies ist das Template default/manage_customers.html</h1>
+<h1>Customers</h1>
+{{=grid}}
