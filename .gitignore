@@ -1,9 +1,11 @@
 .hgignore
 /.hg/*
+/errors/*
 
 # Logs and databases #
 ######################
 *.log
 *.sql
 *.sqlite
+*.sqlite_org
 

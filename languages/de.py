@@ -255,6 +255,7 @@
 'Support': 'Support',
 'Table': 'Tabelle',
 'Telefon': 'Telefon',
+'TestDT': 'TestDT',
 'The "query" is a condition like "db.table1.field1==\'value\'". Something like "db.table1.field1==db.table2.field2" results in a SQL JOIN.': 'Die "query" ist eine Bedingung wie "db.tabelle1.feld1==\'wert\'". So etwas wie "db.tabelle1.feld1==db.tabelle2.feld2" resultiert in einem SQL JOIN.',
 'The Core': 'Der Kern',
 'The output of the file is a dictionary that was rendered by the view %s': 'Die Ausgabe der Datei ist ein "dictionary", welches vom "view" %s gerendert wurde',

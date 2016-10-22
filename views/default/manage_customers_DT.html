@@ -1,0 +1,67 @@
+{{extend 'layout.html'}}
+{{if 'message' in globals():}}
+<h3>{{=message}}</h3>
+{{pass}}
+<script
+  src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js">
+  src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js">
+</script>
+<link rel="stylesheet"
+  media="screen"
+  href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/se-1.2.0/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/se-1.2.0/datatables.min.js"></script>
+
+    <table id="customer-table" class="table table-bordered table-striped" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Kontakt</th>
+                <th>Ort</th>
+                <th>Notiz</th>
+            </tr>
+        </thead>
+    </table>
+ 
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#customer-table").DataTable({
+        data:  {{=results}},
+        "deferRender": true,
+        columns: [
+            { data: 'cust_name' },
+            { data: 'cust_contact' },
+            { data: 'city' },
+            { data: 'note' }
+            // 'id' omitted to show that you can
+            // use only the fields you choose
+        ],
+        "language": {
+            "sEmptyTable":      "Keine Daten in der Tabelle vorhanden",
+            "sInfo":            "_START_ bis _END_ von _TOTAL_ Einträgen",
+            "sInfoEmpty":       "0 bis 0 von 0 Einträgen",
+            "sInfoFiltered":    "(gefiltert von _MAX_ Einträgen)",
+            "sInfoPostFix":     "",
+            "sInfoThousands":   ".",
+            "sLengthMenu":      "_MENU_ Einträge anzeigen",
+            "sLoadingRecords":  "Wird geladen...",
+            "sProcessing":      "Bitte warten...",
+            "sSearch":          "Suchen",
+            "sZeroRecords":     "Keine Einträge vorhanden.",
+            "oPaginate": {
+                "sFirst":       "Erste",
+                "sPrevious":    "Zurück",
+                "sNext":        "Nächste",
+                "sLast":        "Letzte"
+            },
+            "oAria": {
+                "sSortAscending":  ": aktivieren, um Spalte aufsteigend zu sortieren",
+                "sSortDescending": ": aktivieren, um Spalte absteigend zu sortieren"
+            }
+        },
+         select: true
+    })
+});
+</script>

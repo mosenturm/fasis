@@ -10,7 +10,8 @@
 
 response.menu += [[T('Register Category'), False, URL('register_cust_categorie')],
                  [T('Register Type'), False, URL('register_cust_type')],
-                 [T('Customers'), False, URL('manage_customers')]]
+                 [T('Customers'), False, URL('manage_customers')],
+                 [T('TestDT'), False, URL('manage_customers_DT')]]
 
 def register_cust_categorie():
     grid = SQLFORM.smartgrid(db.cust_categories, 
@@ -38,6 +39,17 @@ def manage_customers():
                              formstyle='bootstrap3_stacked')
     return dict(grid=grid)
 
+def manage_customers_DT():
+    import json
+    # Select all the records, to show how
+    # datatables.net paginates.
+    # Rows can't be serialized because they contain a reference to
+    # an open database connection. Use as_list()
+    # to serialize the query result.
+    customer = json.dumps(db(db.customer).select().as_list())
+    # Convert to XML for DataTable
+    return dict(results=XML(customer), message='DataTable in Benutzung')  
+  
 def index():
     """
     example action using the internationalization operator T and flash
